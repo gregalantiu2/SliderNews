@@ -2,17 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { SliderBarComponent } from './slider-bar/slider-bar.component';
+import { NewsGridComponent } from './news-grid/news-grid.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MainComponent,
+    SliderBarComponent,
+    NewsGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainComponent]
 })
 export class AppModule { }
