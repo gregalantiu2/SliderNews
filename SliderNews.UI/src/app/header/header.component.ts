@@ -5,12 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   navbarOpen = false;
 
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
+  }
+
+  ngOnInit(): void {
   }
 
 }
