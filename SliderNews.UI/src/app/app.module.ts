@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { SliderBarComponent } from './slider-bar/slider-bar.component';
 import { NewsGridComponent } from './news-grid/news-grid.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     SliderBarComponent,
-    NewsGridComponent
+    NewsGridComponent,
+    SearchBarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
