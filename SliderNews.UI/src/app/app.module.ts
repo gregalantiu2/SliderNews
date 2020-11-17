@@ -7,6 +7,9 @@ import { SliderBarComponent } from './slider-bar/slider-bar.component';
 import { NewsGridComponent } from './news-grid/news-grid.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HeaderComponent } from './header/header.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AddHeaderInterceptor } from './core/add-header.interceptor'
+import { DataService } from '../app/core/data.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataService,
+              { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi:true }
+             ],
   bootstrap: [MainComponent]
 })
 export class AppModule { }

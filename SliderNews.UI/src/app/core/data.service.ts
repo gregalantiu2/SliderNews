@@ -2,13 +2,21 @@ import { Injectable } from "@angular/core";
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
+import { Article } from '../models/article';
+import { environment } from '../../environments/environment';
+import { NewsApiResponseModel } from '../models/newsApiResponseModel';
 
 @Injectable()
 export class DataService{
     
     constructor(private http: HttpClient) { }
+    
+    getNewsArticlesByTopHeadlines(country: string) : Observable<NewsApiResponseModel> {
+        console.log(environment.newsApiTopHeadlinesUrl + country);
+        return this.http.get<NewsApiResponseModel>(environment.newsApiTopHeadlinesUrl + country);
+    }
 
-    getNewsArticlesByTopic(){
-        
+    getNewsArticlesByTopic(searchTerm: string) : Observable<Article[]> {
+        return this.http.get<Article[]>(environment.newsApiEverythingUrl + searchTerm);
     }
 }
