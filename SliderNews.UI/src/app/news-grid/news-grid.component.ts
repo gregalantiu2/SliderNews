@@ -20,7 +20,6 @@ export class NewsGridComponent implements OnInit {
                                                                    ,(err: any) => console.log(err)
                                                                    ,() => console.log('complete')
                                                                   );
-    console.log(this.response);
   }
 
 }
