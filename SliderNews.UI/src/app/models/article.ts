@@ -1,12 +1,12 @@
-import { Source } from './source';
+import { source } from './source';
 
-export class Article {
-    source: Source;
+export class article {
+    source: source;
     author: string;
     title: string;
     description: string;
     url: string;
     urlToImage: string;
-    publishedAt: Date;
+    publishedAt: string;
     content: string; 
 }

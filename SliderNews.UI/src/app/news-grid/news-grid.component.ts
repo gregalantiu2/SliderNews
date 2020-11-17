@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/data.service';
-import { Article } from '../models/article';
 import { NewsApiResponseModel } from '../models/newsApiResponseModel';
 
 @Component({
@@ -10,17 +9,18 @@ import { NewsApiResponseModel } from '../models/newsApiResponseModel';
 })
 export class NewsGridComponent implements OnInit {
 
-  response: NewsApiResponseModel;
+  response: Array<any>;
   
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     //Eventually get country by IP Address
-    this.dataService.getNewsArticlesByTopHeadlines('us').subscribe((data: NewsApiResponseModel) => this.response = data
+    this.dataService.getNewsArticlesByTopHeadlines('us').subscribe(data => this.response = data['articles']
                                                                    ,(err: any) => console.log(err)
                                                                    ,() => console.log('complete')
                                                                   );
     console.log(this.response);
+
   }
 
 }
