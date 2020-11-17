@@ -10,6 +10,10 @@ import { HeaderComponent } from './header/header.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddHeaderInterceptor } from './core/add-header.interceptor'
 import { DataService } from '../app/core/data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider'
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,14 @@ import { DataService } from '../app/core/data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatInputModule
+  ],
+  exports: [
+    MatSliderModule,
+    MatInputModule
   ],
   providers: [DataService,
               { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi:true }

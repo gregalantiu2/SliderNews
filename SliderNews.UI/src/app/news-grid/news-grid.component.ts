@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../core/data.service';
-import { Article } from '../models/article';
 import { NewsApiResponseModel } from '../models/newsApiResponseModel';
 
 @Component({
