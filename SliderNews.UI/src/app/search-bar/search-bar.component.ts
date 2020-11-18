@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Search } from '../models/search';
+import { DataService } from '../core/data.service'
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  searchModel = new Search('');
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.searchModel.searchTerm);
+    this.searchModel.searchTerm === "" ? 
+      this.dataService.getNewsArticlesByTopHeadlines('us') : this.dataService.getNewsArticlesByTopic(this.searchModel.searchTerm)
+  }
 }
