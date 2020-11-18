@@ -13,7 +13,8 @@ import { DataService } from '../app/core/data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider'
 import { MatInputModule } from '@angular/material/input';
-
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -29,11 +30,14 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    FormsModule
   ],
   exports: [
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [DataService,
               { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi:true }

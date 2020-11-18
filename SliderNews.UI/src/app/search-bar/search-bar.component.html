@@ -1,5 +1,7 @@
-<mat-form-field>
+<form #searchForm="ngForm">
+    <mat-form-field>
+        <input matInput class="searchbar" name="searchTerm" type="text" ngModel>
+    </mat-form-field>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+</form>
 
-    <input matInput class="searchbar" type="text">
-
-</mat-form-field> 
