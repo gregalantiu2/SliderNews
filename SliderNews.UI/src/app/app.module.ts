@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider'
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms'
     SliderBarComponent,
     NewsGridComponent,
     SearchBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,6 @@ import { FormsModule } from '@angular/forms'
   providers: [DataService,
               { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi:true }
              ],
-  bootstrap: [MainComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

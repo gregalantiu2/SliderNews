@@ -16,7 +16,7 @@ export class DataService{
         return this.http.get<NewsApiResponseModel>(environment.newsApiTopHeadlinesUrl + country);
     }
 
-    getNewsArticlesByTopic(searchTerm: string) : Observable<Article[]> {
-        return this.http.get<Article[]>(environment.newsApiEverythingUrl + searchTerm);
+    getNewsArticlesByTopic(searchTerm: string) : Observable<NewsApiResponseModel> {
+        return this.http.get<NewsApiResponseModel>(environment.newsApiEverythingUrl + searchTerm);
     }
 }
