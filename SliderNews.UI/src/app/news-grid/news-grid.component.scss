@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .article{
+      border: black;
+      border: solid;
+
+  }
+
+  .articleImage{
+    width: 400px;
+    height: 200px;
+  }

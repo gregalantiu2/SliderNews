@@ -1,3 +1,8 @@
-<tr *ngFor="let article of response.articles">
-    <td>{{article.title}}</td>
-</tr>
+<div class="grid-container">
+    <div class="article" *ngFor="let article of response.articles">
+        <a href="{{article.url}}">
+            <img class="articleImage" src="{{article.urlToImage}}" alt="{{article.description}}">
+            <div>{{article.title}}</div>
+        </a>
+    </div>
+</div>
