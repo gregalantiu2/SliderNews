@@ -1,16 +1,25 @@
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    grid-gap: 15px;
   }
 
   .article{
       border: black;
       border: solid;
-
+      border-radius: 25px;
   }
 
   .articleImage{
-    width: 400px;
-    height: 200px;
+    width: 75%;
+    height: 250px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border-radius: 35px;
+  }
+
+  .title{
+      padding-left: 10px;
+      padding-right: 10px;
   }

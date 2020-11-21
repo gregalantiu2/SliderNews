@@ -2,7 +2,7 @@
     <div class="article" *ngFor="let article of response.articles">
         <a href="{{article.url}}">
             <img class="articleImage" src="{{article.urlToImage}}" alt="{{article.description}}">
-            <div>{{article.title}}</div>
+            <div class="title">{{article.title}}</div>
         </a>
     </div>
 </div>
